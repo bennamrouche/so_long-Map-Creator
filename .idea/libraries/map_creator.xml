@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="map_creator">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/bin/map_creator.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

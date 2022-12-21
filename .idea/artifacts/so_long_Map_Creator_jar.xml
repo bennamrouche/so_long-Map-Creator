@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="so_long-Map-Creator:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/so_long_Map_Creator_jar</output-path>
-    <root id="archive" name="so_long-Map-Creator.jar">
-      <element id="module-output" name="so_long-Map-Creator" />
-    </root>
-  </artifact>
-</component>
