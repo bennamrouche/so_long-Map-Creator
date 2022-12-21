@@ -2,6 +2,7 @@
 package map.creator;
 
 import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
@@ -18,11 +19,14 @@ public class Data
 {
    try
    {
-        this.Wall = ImageIO.read(getClass().getResourceAsStream("./src/wall.png"));
-        this.Exit = ImageIO.read(getClass().getResourceAsStream("./src/exit.png"));
-        this.Floor = ImageIO.read(getClass().getResourceAsStream("./src/floor.png"));
-        this.Player = ImageIO.read(getClass().getResourceAsStream("./src/player.png"));
-        this.Target = ImageIO.read(getClass().getResourceAsStream("./src/target.png"));
+       System.out.print(getClass().getResource("./wall.png"));
+        this.Wall = ImageIO.read(getClass().getResource("./wall.png"));
+        this.Exit = ImageIO.read(getClass().getResource("./exit.png"));
+        this.Floor = ImageIO.read(getClass().getResource("./floor.png"));
+        this.Player = ImageIO.read(getClass().getResource("./player.png"));
+        this.Target = ImageIO.read(getClass().getResource("./target.png"));
+
+        
                }
    catch(Exception ex)
    {
