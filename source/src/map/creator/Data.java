@@ -19,12 +19,12 @@ public class Data
 {
    try
    {
-       System.out.print(getClass().getResource("./wall.png"));
-        this.Wall = ImageIO.read(getClass().getResource("./wall.png"));
-        this.Exit = ImageIO.read(getClass().getResource("./exit.png"));
-        this.Floor = ImageIO.read(getClass().getResource("./floor.png"));
-        this.Player = ImageIO.read(getClass().getResource("./player.png"));
-        this.Target = ImageIO.read(getClass().getResource("./target.png"));
+       System.out.print(getClass().getResource("./src/wall.png"));
+        this.Wall = ImageIO.read(getClass().getResource("/src/wall.png"));
+        this.Exit = ImageIO.read(getClass().getResource("/src/exit.png"));
+        this.Floor = ImageIO.read(getClass().getResource("/src/floor.png"));
+        this.Player = ImageIO.read(getClass().getResource("/src/player.png"));
+        this.Target = ImageIO.read(getClass().getResource("/src/target.png"));
 
         
                }

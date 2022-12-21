@@ -238,7 +238,7 @@ public class main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-     
+        text.setText(custom.map3);
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
