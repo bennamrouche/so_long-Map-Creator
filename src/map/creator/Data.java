@@ -2,8 +2,6 @@
 package map.creator;
 
 import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
@@ -19,7 +17,7 @@ public class Data
 {
    try
    {
-       System.out.print(getClass().getResource("./src/wall.png"));
+       
         this.Wall = ImageIO.read(getClass().getResource("/src/wall.png"));
         this.Exit = ImageIO.read(getClass().getResource("/src/exit.png"));
         this.Floor = ImageIO.read(getClass().getResource("/src/floor.png"));

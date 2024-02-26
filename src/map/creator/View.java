@@ -106,7 +106,8 @@ public void setMap(String[] map,int row_len, int colum_len)
     this.map = map;
     this.map_w = row_len * 32;
     this.map_h = colum_len * 32;
-       repaint();
+     repaint();
+     validate();
 
 }
 
