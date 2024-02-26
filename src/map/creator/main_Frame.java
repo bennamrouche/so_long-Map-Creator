@@ -196,7 +196,7 @@ public class main_Frame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error : Deffernt Row size in map !");
             return;
         }
-        System.err.println(list[0]);
+       
       view.setVisible(true);
       view.setMap(list, list[0].length(), list.length);
     }//GEN-LAST:event_jButton1ActionPerformed
