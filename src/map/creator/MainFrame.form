@@ -220,7 +220,7 @@
           <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Player : [P , p]   Wall : 1   Floor : 0    Exit : [E , e]   Targets :[ C , c]"/>
+        <Property name="text" type="java.lang.String" value="Player : [P , p]   Wall : 1   Floor : 0    Exit : [E , e]   Targets :[ C , c] Enemy:[X, x]"/>
       </Properties>
     </Component>
   </SubComponents>

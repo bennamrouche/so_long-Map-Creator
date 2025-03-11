@@ -7,7 +7,7 @@ public class MapChecker {
     
     public static boolean chekMapChracter(String map)
     {
-        String allchar = "P10EC\n";
+        String allchar = "P10ECX\n";
     for (char c : map.toUpperCase().toCharArray())
     {
         if (!allchar.contains(c + ""))
@@ -16,7 +16,7 @@ public class MapChecker {
     }
     return true;
     }
-    
+        
     public static boolean  CheckPlayer(String map)
     {
         int num = 0;
@@ -32,7 +32,8 @@ public class MapChecker {
         else 
             return false;
     
-    }  
+    }
+    
     public static boolean chekRow(String[] rows)
     {
         int len = rows[0].length();

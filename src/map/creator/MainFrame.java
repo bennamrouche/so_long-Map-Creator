@@ -9,17 +9,44 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
-public class main_Frame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame {
       View view = new View();
+      String map = "";
 
 
-    public main_Frame() {
+    public MainFrame() {
         initComponents();
         this.getContentPane().setBackground(Color.BLACK);
       view.setBounds(0, 0, 500, 500);
       view.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+      
+     new Timer(150, (e)->{
+         
+        
+       map = text.getText().toUpperCase();
+                     
+        if (map.length() == 0)
+                 return;
+      
+        if (!MapChecker.chekMapChracter(map))      
+            return;
+        
+       String[] list = map.split("\n");
+       
+        if (!MapChecker.chekRow(list))
+                 return;
+           
+       if(!view.isShowing())
+                 view.setVisible(true);
+      view.setMap(list, list[0].length(), list.length);
+              
+         
+      }).start();
+     System.out.print("done\n");
+     
     }
 
     /**
@@ -146,7 +173,7 @@ public class main_Frame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cantarell", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 255, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Player : [P , p]   Wall : 1   Floor : 0    Exit : [E , e]   Targets :[ C , c]");
+        jLabel1.setText("Player : [P , p]   Wall : 1   Floor : 0    Exit : [E , e]   Targets :[ C , c] Enemy:[X, x]");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,16 +207,20 @@ public class main_Frame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error: Empty Map !");
             return;
         }
-       if (!MapChecker.chekMapChracter(map))
+       
+        if (!MapChecker.chekMapChracter(map))
                    {
             JOptionPane.showMessageDialog(null, "Error :The map is na unknow chracter !");
             return;
-        }
+        
+          }
+       
        if (!MapChecker.CheckPlayer(map))
                    {
             JOptionPane.showMessageDialog(null, "Error : 0 or 2...n Player in map [just one Player]!");
             return;
         }
+       
        String[] list = map.split("\n");
         if (!MapChecker.chekRow(list))
                    {
@@ -218,7 +249,7 @@ public class main_Frame extends javax.swing.JFrame {
             fl.flush();
             fl.close();
         } catch (IOException ex) {
-            Logger.getLogger(main_Frame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "error : File not Saved !");
         }
            JOptionPane.showMessageDialog(null, "File  Saved" + f.getPath());
@@ -228,19 +259,19 @@ public class main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       new Frame_newmap(text).setVisible(true);
+       new NewMapDialog(text).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-     text.setText(custom.map1);
+     text.setText(Custom.map1);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-      text.setText(custom.map2);
+      text.setText(Custom.map2);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        text.setText(custom.map3);
+        text.setText(Custom.map3);
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
@@ -258,20 +289,21 @@ public class main_Frame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(main_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new main_Frame().setVisible(true);
+                new MainFrame().setVisible(true);
             }
         });
     }

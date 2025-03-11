@@ -7,15 +7,12 @@ import java.awt.Graphics;
 
 public class View extends javax.swing.JFrame {
 
- private final Data data = new Data();
- private int map_w = 320;
- private int map_h = 320;
- private int row_len = 10;
- private int colum_len = 10;
- private String[] map;
+
+ 
   public View() {
         initComponents();
         this.getContentPane().setBackground(Color.BLACK);
+        this.setContentPane(new MapCanva());
     }
 
 
@@ -75,53 +72,23 @@ public class View extends javax.swing.JFrame {
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paint(Graphics g)
+    {
         super.paint(g);
-        int inx = getInsets().left;
-        int iny = getInsets().top;
-        if(map_w > 0 && map_h > 0)
-            this.setSize(map_w + inx, map_h + getInsets().top);
-        if (map == null)
-            return;
-        int i = 0;
-        int j = 0;
-        String str;
-         for(int y = iny; y < map_h; y += 32)
-         {
-             i = 0;
-              str = map[j];
-             for(int x = inx ; x < map_w; x += 32)
-            {
-                DrawImage(g, x , y , map[j].toCharArray()[i]);
-                i++;
-            }
-            j++;
-        }
+        
+       
  }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 
 public void setMap(String[] map,int row_len, int colum_len)
 {
-    this.map = map;
-    this.map_w = row_len * 32;
-    this.map_h = colum_len * 32;
-     repaint();
-     validate();
-
-}
-
-private void DrawImage(Graphics g, int x, int y, char C )
-{
-    g.drawImage(data.Floor, x, y, this);
-    switch(C)
-    {
-        case 'P':g.drawImage(data.Player, x, y, this); break;
-        case 'C':g.drawImage(data.Target, x, y, this); break;
-        case 'E':g.drawImage(data.Exit, x, y, this); break;
-        case '1':g.drawImage(data.Wall, x, y, this); break;
     
-    }
- 
+   ( (MapCanva)this.getContentPane()) .setMap(map);
+   
+       this.setSize(row_len * 32 + getInsets().left+getInsets().right    ,  colum_len * 32 + getInsets().top+getInsets().bottom);
+   
 }
+
+
 }
