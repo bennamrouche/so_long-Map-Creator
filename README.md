@@ -15,7 +15,12 @@ java -jar map_creator.jar # Mac/Linux
 ``` 
 ```bash 
  java -jar map_creator.jar #or double click on the program Icon
-``` 
+```
+# ----------   Version 2.1 ---------------------
+ + change icons
+ + fix rendering
+ + add auto render
+ + add Enemy
 # ----------   Version 2 ---------------------
   + fixe some bugs
   + Change  Desing and Color
@@ -23,10 +28,12 @@ java -jar map_creator.jar # Mac/Linux
   + `Compile With java 11 `
   +  IDE Netbeans 1 
 ## Releases 
+  ### v2.1.0
+  +   [Download so_long_map_creator-v2.jar](https://github.com/bennamrouche/so_long-Map-Creator/blob/main/bin/so_long_map_creator-v2-1.jar)
   ### v2.0.0
   +   [Download so_long_map_creator-v2.jar](https://github.com/bennamrouche/so_long-Map-Creator/blob/main/bin/so_long_map_creator-v2.jar)
   ### v1.0.0  
-  +   [Download map_creator-v1.jar ](https://github.com/bennamrouche/so_long-Map-Creator/blob/main/bin/map_creator-v1.jar) 
+  +   [Download map_creator-v1.jar ](https://github.com/bennamrouche/so_long-Map-Creator/blob/main/bin/map_creator-v1.jar)   
 
 <br>
 # Preview 
